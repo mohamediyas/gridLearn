@@ -1,0 +1,83 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: lightsteelblue;
+}
+
+.grid {
+  display: grid;
+  grid-template-rows: 50px 50px;
+  grid-template-columns: 2fr 1fr 2fr;
+
+  /* grid-template-rows:    minmax(100px, auto);
+  grid-template-columns: minmax(auto, 50%) 1fr 3em; */
+  grid-template-rows: repeat(2, 200px);
+  grid-template-columns: repeat(3, 1fr);
+
+  grid-gap: 10px 10px;
+
+  /* grid name */
+  /* 
+  grid-template-rows:    [row-1-start] 1fr [row-2-start] 1fr [row-2-end];
+  grid-template-columns: [col-1-start] 1fr [col-2-start] 1fr [col-3-start] 1fr [col-3-end];
+  
+  */
+
+  /* grid-template-columns: repeat(3,1fr); */
+
+  /* naming position grid area */
+
+  /* grid-template-areas:   "header header"
+                        "content sidebar"
+                        "footer footer";
+grid-template-rows:    150px 1fr 100px;
+grid-template-columns: 1fr 200px; */
+
+  /* grid-auto-rows: 140px; */
+
+  /* grid-auto-flow: row;
+  grid-auto-flow: column; */
+  /* grid-template-columns: 30px 60px;
+grid-auto-flow:        column;
+grid-auto-columns:     1fr; */
+}
+
+.container1 {
+  grid-row-start: 1;
+  grid-row-end: 3;
+  grid-column-start: 2;
+  grid-column-end: 3;
+
+  /* grid-row-start:    header;
+grid-row-end:      header;
+grid-column-start: header;
+grid-column-end:   header; */
+
+  /* grid-row-start:    row-2-start;
+grid-row-end:      row-end;
+grid-column-start: col-2-start;
+grid-column-end:   col-end; */
+}
+
+.container2 {
+  grid-row: 2/3;
+  grid-column: 1/4;
+}
+
+.container3 {
+  /* grid-area is shorthand for grid-row-start, grid-column-start, grid-row-end and grid-column-end. */
+  grid-area: 3 / 1 / 4 / 2;
+  /* grid-row: 3/4;
+  grid-column: 2/4; */
+}
+
+.container6 {
+  /* span - Grid items span only one column and row track by default, but can span multiple row and/or column tracks using the same properties  */
+
+  grid-row: 3 / span 2;
+  grid-column: span 2;
+}
